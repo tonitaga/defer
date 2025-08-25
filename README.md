@@ -27,3 +27,16 @@ target_link_libraries(${PROJECT_NAME} PRIVATE defer::defer)
 add_subdirectory(third_party/defer)
 target_link_libraries(${PROJECT_NAME} PRIVATE defer::defer)
 ```
+
+## Usage
+
+```cpp
+{
+    FILE* f = fopen("file.txt", "r");
+    if (!f) return;
+    defer { fclose(f); }; // This will run at the end of the scope.
+
+    // ... work with the file ...
+    // fclose(f) is called automatically here, even if an exception is thrown.
+}
+```
