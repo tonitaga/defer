@@ -93,7 +93,7 @@ struct DeferTaskTag {};
  * @param task The lambda or function to be deferred.
  * @return A fully constructed `Defer` object ready to execute the task on scope exit.
  */
-Defer operator|(DeferTaskTag, DeferTaskType task)
+inline Defer operator|(DeferTaskTag, DeferTaskType task)
 {
     return Defer(std::move(task));
 }
