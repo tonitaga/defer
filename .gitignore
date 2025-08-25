@@ -39,3 +39,10 @@
 
 # debug information files
 *.dwo
+
+# Folders
+
+*build
+*out
+*bin
+*lib
